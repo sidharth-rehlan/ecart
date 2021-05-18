@@ -1,0 +1,11 @@
+.card img{
+    max-width: 20rem;
+}
+
+.card{
+    padding: 2rem;
+}
+
+.card Button{
+    margin:0 1rem;
+}

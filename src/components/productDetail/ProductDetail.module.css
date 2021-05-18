@@ -1,0 +1,7 @@
+.productDetail{
+    width: 100%;
+}
+
+.productDetail img{
+    max-height: 40rem;
+}

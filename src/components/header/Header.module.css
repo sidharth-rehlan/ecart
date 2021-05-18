@@ -1,0 +1,28 @@
+.header{
+    flex-direction: row;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.logo{
+    font-size: 4rem;
+    flex: 1 70%;
+
+}
+
+.loginMenu {
+    flex: 1 30%;
+    display: flex;
+    justify-content: center;
+}
+.navigation{
+    flex:1 100%;
+    display: flex;
+    justify-content: center;
+}
+.navigation a{
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 11px;
+    flex-direction: row;
+}

@@ -1,0 +1,10 @@
+.productList{
+    flex: 1 1 100%;
+    flex-direction: row;
+    flex-flow: wrap;
+    display: flex;
+}
+.loader{
+    flex: 1 1 100%;
+    align-items: center;
+}

@@ -1,0 +1,20 @@
+.productItem{
+    flex: 1 25%;
+    flex-basis: 25%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.productItem img{
+    max-width: 20rem;
+}
+
+.card{
+    padding: 2rem;
+}
+
+.productItem Button{
+    margin:0 1rem;
+}
