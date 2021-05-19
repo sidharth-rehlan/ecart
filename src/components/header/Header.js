@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import classes from './Header.module.css'
 import {Button} from '@material-ui/core';
 import MiniCart from '../miniCart/MiniCart';
@@ -15,8 +15,11 @@ function Header() {
             </div>
 
             <nav className={classes.navigation}>
-                <Link to="/">Home</Link>
-                <Link to="/products">Products</Link>
+
+                <NavLink activeClassName ={classes.active} to="/" exact>Home</NavLink>
+                <NavLink activeClassName ={classes.active} to="/products">Products</NavLink>
+                <NavLink activeClassName ={classes.active} to="/profile">Profile</NavLink>
+
             </nav>
         </header>
     )

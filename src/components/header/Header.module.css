@@ -26,3 +26,7 @@
     padding: 11px;
     flex-direction: row;
 }
+
+.active{
+    color:brown;
+}

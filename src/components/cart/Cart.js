@@ -1,13 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import classes from "./Cart.module.css";
+import CartItem from "./CartItem";
+import {removeProductFromCart} from '../../store/cartReducer';
 
 function Cart() {
   const productData = useSelector((state) => state.productList.entities);
-
-  console.log(productData);
-
   const productsInCart = useSelector((state) => state.cart.products);
-  console.log(productsInCart);
+  const dispatch = useDispatch();
 
   let productinCartObj = {};
   let productkeys = [];
@@ -17,27 +18,32 @@ function Cart() {
     productkeys.push(parseInt(key.productId));
   }
 
- // let productKeys = Object.keys(productinCartObj);
-
   let finalProducts = productData.filter((product) => {
     return productkeys.includes(product.id);
   });
 
-  console.log(finalProducts);
+  const onRemove = (id)=>{
+    console.log(id);
+    dispatch(removeProductFromCart({productId: id}));
+  }
+
+  const onEdit = (id)=>{
+    console.log(id);
+  }
 
   const productList = finalProducts.map((product) => {
     return (
-      <li key={product.id}>
-        <div>
-          <img src={product.image} alt={product.title}></img>
-          <span>{product.description}</span>
-          <span>{product.price}</span>
-          <span>Quantity: {productinCartObj[product.id]}</span>
-        </div>
-        <div>
-          <span>Remove</span>
-          <span>Edit</span>
-        </div>
+      <li className={classes.cartItem} key={product.id}>
+        <CartItem
+          image={product.image}
+          description={product.description}
+          price={product.price}
+          quantity={productinCartObj[product.id]}
+          title={product.title}
+          id={product.id}
+          onRemove={onRemove}
+          onEdit={onEdit}
+        ></CartItem>
       </li>
     );
   });
