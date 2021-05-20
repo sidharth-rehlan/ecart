@@ -5,22 +5,4 @@
   border: 2px solid;
   margin: 10px 0;
 }
-.image {
-  flex: 1 8%;
-  max-width: 8%;
-}
-.description {
-  flex: 1 40%;
-}
-.price {
-  flex: 1 10%;
-}
-.quantity {
-  flex: 1 10%;
-}
-.removeButton {
-  flex: 1 10%;
-}
-.editButton {
-  flex: 1 10%;
-}
+

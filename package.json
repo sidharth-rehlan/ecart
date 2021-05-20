@@ -8,7 +8,7 @@
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@testing-library/user-event": "^13.1.9",
     "formik": "^2.2.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -23,13 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "testA" : "yarn test -- -t 'MyAccount'"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "testA": "yarn test -- -t 'ColorForm'"
   },
   "browserslist": {
     "production": [
@@ -42,5 +36,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "eslint-plugin-jest-dom": "^3.9.0",
+    "eslint-plugin-testing-library": "^4.5.0"
+  },
+  "jest": {
+       "coveragePathIgnorePatterns": ["/src/store",
+       "/src/components/cart",
+       "/src/components/footer",
+       "/src/components/header",
+       "/src/components/miniCart",
+       "/src/components/productDetail",
+       "/src/components/productListing",
+       "/src/components/products"]
+   }
 }

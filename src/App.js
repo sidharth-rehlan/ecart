@@ -4,9 +4,11 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ProductListing from "./components/productListing/ProductListing";
 import ProductDetail from "./components/productDetail/ProductDetail";
-import Cart from "./components/cart/Cart"
-import Profile from './components/profile/Profile'
+import Cart from "./components/cart/Cart";
+import Profile from "./components/profile/Profile";
 import { Route, Switch } from "react-router-dom";
+import ColorForm from "./components/profile/form/ColorForm";
+import Users from "./components/users/Users";
 
 function App() {
   return (
@@ -27,6 +29,12 @@ function App() {
         </Route>
         <Route path="/profile">
           <Profile></Profile>
+        </Route>
+        <Route path="/colorForm">
+          <ColorForm></ColorForm>
+        </Route>
+        <Route path="/users">
+          <Users></Users>
         </Route>
       </Switch>
       <Footer></Footer>

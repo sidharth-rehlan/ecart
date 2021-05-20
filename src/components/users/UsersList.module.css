@@ -1,0 +1,27 @@
+.userlist table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.userlist td {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  border: 1px solid #ddd;
+}
+
+.userlist th {
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: 1px solid #ddd;
+  background-color: #4caf50;
+  color: white;
+}
+
+.userlist .actionIcon {
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.userlist tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

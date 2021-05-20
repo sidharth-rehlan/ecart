@@ -8,7 +8,7 @@ const validate = (values) => {
   if (!values.firstname) {
     errors.firstname = "Required";
   } else if (values.firstname.length > 15) {
-    errors.firstname = "Must be 15 character or less";
+    errors.firstname = "mustbe15";
   }
 
   if (!values.password) {
@@ -18,7 +18,9 @@ const validate = (values) => {
   }
   if (!values.emailId) {
     errors.emailId = "Required";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.emailId)) {
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.emailId)
+  ) {
     errors.emailId = "Invalid Email id";
   }
   return errors;
@@ -37,9 +39,9 @@ function MyAccount() {
     },
   });
 
-  const isEmpty = (object) =>{
-    return Object.keys(object).length === 0
-  } 
+  const isEmpty = (object) => {
+    return Object.keys(object).length === 0;
+  };
   return (
     <form className={classes.form} onSubmit={formik.handleSubmit}>
       <div>
@@ -52,6 +54,7 @@ function MyAccount() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.firstname}
+          id="firstname"
         />
       </div>
       {formik.touched.firstname && formik.errors.firstname ? (
@@ -66,9 +69,10 @@ function MyAccount() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.emailId}
+          id="emailId"
         />
       </div>
-      {formik.touched.emailId &&  formik.errors.emailId  ? (
+      {formik.touched.emailId && formik.errors.emailId ? (
         <div className={classes.error}>{formik.errors.emailId}</div>
       ) : null}
       <div>
@@ -79,13 +83,19 @@ function MyAccount() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
+          id="password"
         />
       </div>
       {formik.touched.password && formik.errors.password ? (
         <div className={classes.error}>{formik.errors.password}</div>
       ) : null}
 
-      <Button disabled={isEmpty(formik.errors) ? false: true} type="submit" variant="contained" color="primary">
+      <Button
+        disabled={isEmpty(formik.errors) ? false : true}
+        type="submit"
+        variant="contained"
+        color="primary"
+      >
         Submit
       </Button>
     </form>
