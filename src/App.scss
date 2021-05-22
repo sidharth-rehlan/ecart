@@ -1,0 +1,22 @@
+$primaryColor: rgb(255, 162, 41);
+$secondaryColor: rgb(37, 244, 58);
+$primarytextColor: #000;
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: $primarytextColor;
+}
+
+table {
+  color: $primarytextColor;
+}
+
+.App header {
+  background-color: $primaryColor;
+}
+
+.App footer {
+  background-color: $primaryColor;
+}

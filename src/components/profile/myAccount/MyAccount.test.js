@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import MyAccount from "./MyAccount";
 import userEvent from "@testing-library/user-event";
 
-describe.only("MyAccount", () => {
+describe("MyAccount", () => {
   test("should render MyAccount", () => {
     render(<MyAccount />);
     expect(screen.getByLabelText("First Name")).toBeInTheDocument();
@@ -13,16 +13,11 @@ describe.only("MyAccount", () => {
   test("should show error if user enter more then 15 character as name", async () => {
     render(<MyAccount />);
     const firstnameField = screen.getByLabelText(/First Name/i);
-
-    screen.debug();
-
     userEvent.type(
       firstnameField,
       "hellow world jksadjfksd  ksdjfkasdjfk ddfdfdf"
     );
-    userEvent.clear(firstnameField);
-
-    screen.debug();
+    await userEvent.clear(firstnameField);
 
     const mustBe = await screen.findByText("mustbe15");
 

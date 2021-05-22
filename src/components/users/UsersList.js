@@ -1,38 +1,8 @@
 import React from "react";
 import UserRow from "./UserRow";
 import classes from "./UsersList.module.css";
-const usersdata = [
-  {
-    id: 1,
-    firstname: "sidharth",
-    lastname: "rehlan",
-    age: 34,
-    location: "chandigarh",
-  },
-  {
-    id: 2,
-    firstname: "ram",
-    lastname: "rehlan",
-    age: 34,
-    location: "chandigarh",
-  },
-  {
-    id: 3,
-    firstname: "karan",
-    lastname: "rehlan",
-    age: 34,
-    location: "chandigarh",
-  },
-  {
-    id: 4,
-    firstname: "nitin",
-    lastname: "rehlan",
-    age: 34,
-    location: "chandigarh",
-  },
-];
 
-function UsersList() {
+function UsersList(props) {
   return (
     <div className={classes.userlist}>
       <table>
@@ -46,7 +16,7 @@ function UsersList() {
           </tr>
         </thead>
         <tbody>
-          {usersdata.map((user) => {
+          {props.usersdata.map((user) => {
             return (
               <UserRow
                 key={user.id}

@@ -5,11 +5,13 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.58",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.1.9",
     "formik": "^2.2.6",
+    "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -42,13 +44,15 @@
     "eslint-plugin-testing-library": "^4.5.0"
   },
   "jest": {
-       "coveragePathIgnorePatterns": ["/src/store",
-       "/src/components/cart",
-       "/src/components/footer",
-       "/src/components/header",
-       "/src/components/miniCart",
-       "/src/components/productDetail",
-       "/src/components/productListing",
-       "/src/components/products"]
-   }
+    "coveragePathIgnorePatterns": [
+      "/src/store",
+      "/src/components/cart",
+      "/src/components/footer",
+      "/src/components/header",
+      "/src/components/miniCart",
+      "/src/components/productDetail",
+      "/src/components/productListing",
+      "/src/components/products"
+    ]
+  }
 }

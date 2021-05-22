@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import ProductListing from "./components/productListing/ProductListing";
@@ -14,30 +14,32 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Switch>
-        <Route path="/" exact>
-          <p>Home.....</p>
-        </Route>
-        <Route path="/products" exact>
-          <ProductListing></ProductListing>
-        </Route>
-        <Route path="/products/:id">
-          <ProductDetail></ProductDetail>
-        </Route>
-        <Route path="/cart">
-          <Cart></Cart>
-        </Route>
-        <Route path="/profile">
-          <Profile></Profile>
-        </Route>
-        <Route path="/colorForm">
-          <ColorForm></ColorForm>
-        </Route>
-        <Route path="/users">
-          <Users></Users>
-        </Route>
-      </Switch>
-      <Footer></Footer>
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <p>Home.....</p>
+          </Route>
+          <Route path="/products" exact>
+            <ProductListing></ProductListing>
+          </Route>
+          <Route path="/products/:id">
+            <ProductDetail></ProductDetail>
+          </Route>
+          <Route path="/cart">
+            <Cart></Cart>
+          </Route>
+          <Route path="/profile">
+            <Profile></Profile>
+          </Route>
+          <Route path="/colorForm">
+            <ColorForm></ColorForm>
+          </Route>
+          <Route path="/users">
+            <Users></Users>
+          </Route>
+        </Switch>
+      </main>
+      <Footer>Footer</Footer>
     </div>
   );
 }
