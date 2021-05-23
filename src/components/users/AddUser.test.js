@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import AddUser from "./AddUser";
 import userEvent from "@testing-library/user-event";
 
-describe.only("Add User Test Cases", () => {
+describe("Add User Test Cases", () => {
   test("firstname should not be more then 15 character long", async () => {
     render(<AddUser></AddUser>);
     const firstnameField = screen.getByRole("textbox", { name: /first name/i });

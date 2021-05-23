@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UserRow from "./UserRow";
 import classes from "./UsersList.module.css";
 
@@ -19,11 +19,14 @@ function UsersList(props) {
           {props.usersdata.map((user) => {
             return (
               <UserRow
-                key={user.id}
+                id={user.id[0]}
+                key={user.id[0]}
                 firstname={user.firstname}
                 lastname={user.lastname}
                 age={user.age}
                 location={user.location}
+                updateUserList={props.updateUserList}
+                onEditHandler={props.onEditHandler}
               ></UserRow>
             );
           })}

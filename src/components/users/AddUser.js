@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@material-ui/core";
 import classes from "./AddUser.module.css";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
@@ -11,6 +11,18 @@ function AddUser(props) {
   const [location, setLocation] = useState("");
   const [error, setError] = useState({});
   const [status, setStatus] = useState({});
+
+  console.log("Add User........");
+
+  useEffect(() => {
+    if (props.userData && Object.keys(props.userData).length > 0) {
+      const { firstname, lastname, age, location } = props.userData;
+      setFirstname(firstname);
+      setLastname(lastname);
+      setAge(age);
+      setLocation(location);
+    }
+  }, [props.userData]);
 
   const reInitializeForm = () => {
     setFirstname("");
@@ -47,7 +59,11 @@ function AddUser(props) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    saveUser({ firstname, lastname, age, location });
+    if (props.userData) {
+      saveUser({ firstname, lastname, age, location });
+    } else {
+      props.updateUser({ firstname, lastname, age, location });
+    }
   };
 
   const validateFirstname = (e) => {
@@ -240,7 +256,7 @@ function AddUser(props) {
               )
             }
           >
-            Submit
+            {props.userData ? "Update" : "Submit"}
           </Button>
         </div>
       </form>
